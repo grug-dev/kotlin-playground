@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="algorithms.DivisibleSumPairsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-05T08:26:29" hostname="kkpa-ThinkPad-E590" time="0.038">
-  <properties/>
-  <testcase name="defaultCase()" classname="algorithms.DivisibleSumPairsTest" time="0.035"/>
-  <testcase name="initialTest()" classname="algorithms.DivisibleSumPairsTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

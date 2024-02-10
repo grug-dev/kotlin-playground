@@ -2,15 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="algorithms" target="21" />
-      <module name="algorithms.main" target="21" />
-      <module name="algorithms.test" target="21" />
-      <module name="hacker-rank" target="21" />
       <module name="hacker-rank.main" target="21" />
       <module name="hacker-rank.test" target="21" />
-      <module name="kotlin-core" target="21" />
-      <module name="kotlin-core.main" target="21" />
-      <module name="kotlin-core.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

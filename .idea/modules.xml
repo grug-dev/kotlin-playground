@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algorithms.iml" filepath="$PROJECT_DIR$/algorithms.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms.test.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hacker-rank.iml" filepath="$PROJECT_DIR$/hacker-rank.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hacker-rank.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hacker-rank.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hacker-rank.test.iml" filepath="$PROJECT_DIR$/.idea/modules/hacker-rank.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kotlin-core.iml" filepath="$PROJECT_DIR$/kotlin-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-core.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-core.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/kotlin-playground.iml" filepath="$PROJECT_DIR$/.idea/kotlin-playground.iml" />
     </modules>
   </component>
