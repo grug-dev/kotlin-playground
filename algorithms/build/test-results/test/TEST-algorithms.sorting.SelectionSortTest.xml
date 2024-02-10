@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="algorithms.sorting.SelectionSortTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T10:49:02" hostname="kkpa-ThinkPad-E590" time="27.025">
-  <properties/>
-  <testcase name="sortNumbersFrom1To1M()" classname="algorithms.sorting.SelectionSortTest" time="27.025"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
