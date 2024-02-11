@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="algorithms.sorting.InsertionSortTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-10T10:21:45" hostname="kkpa-ThinkPad-E590" time="68.608">
+<testsuite name="algorithms.sorting.InsertionSortTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-02-11T09:16:14" hostname="kkpa-ThinkPad-E590" time="100.163">
   <properties/>
-  <testcase name="sortNumbersFrom1To100K()" classname="algorithms.sorting.InsertionSortTest" time="68.605"/>
-  <testcase name="sortNumbersFrom1To10()" classname="algorithms.sorting.InsertionSortTest" time="0.001"/>
+  <testcase name="From1To100KInsertionSort()" classname="algorithms.sorting.InsertionSortTest" time="75.237"/>
+  <testcase name="From1To100KSelectionSort()" classname="algorithms.sorting.InsertionSortTest" time="24.918"/>
+  <testcase name="From1To10InsertionSort()" classname="algorithms.sorting.InsertionSortTest" time="0.001"/>
+  <testcase name="From1To10SelectionSort()" classname="algorithms.sorting.InsertionSortTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
