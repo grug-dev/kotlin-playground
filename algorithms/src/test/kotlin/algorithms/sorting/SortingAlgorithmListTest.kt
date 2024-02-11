@@ -10,8 +10,8 @@ class SortingAlgorithmListTest {
         val SORTED_FROM_1_TO_10 = generateList(10)
 
         val _100K = 100000
-        val RANDOM_FROM_1_TO_100K = randomList(_100K)
-        val SORTED_FROM_1_TO_100K = generateList(_100K)
+        val RANDOM_FROM_1_TO_K = randomList(_100K)
+        val SORTED_FROM_1_TO_K = generateList(_100K)
 
         fun getAlgorithmSort(algorithmType: ESortingAlgorithmType): Sortable<List<Int>> {
             return when (algorithmType) {
@@ -19,7 +19,6 @@ class SortingAlgorithmListTest {
                 ESortingAlgorithmType.SELECTION_SORT -> return SelectionSort()
                 else -> throw IllegalArgumentException("Type not defined")
             }
-
         }
 
         fun randomList(n: Int): List<Int> {
@@ -31,7 +30,6 @@ class SortingAlgorithmListTest {
                 val randomNumber = possibleNumbers.removeAt(randomIndex)
                 randomNumbers.add(randomNumber)
             }
-
             return randomNumbers.toList() // Ensure immutability
         }
 
@@ -55,17 +53,17 @@ class SortingAlgorithmListTest {
     }
 
     @Test
-    fun From1To100KSelectionSort() {
+    fun From1ToKSelectionSort() {
         val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.SELECTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_100K)
-        assertEquals(SORTED_FROM_1_TO_100K, sortedList)
+        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
+        assertEquals(SORTED_FROM_1_TO_K, sortedList)
     }
 
     @Test
-    fun From1To100KInsertionSort() {
+    fun From1ToKInsertionSort() {
         val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.INSERTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_100K)
-        assertEquals(SORTED_FROM_1_TO_100K, sortedList)
+        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
+        assertEquals(SORTED_FROM_1_TO_K, sortedList)
     }
 
 }
