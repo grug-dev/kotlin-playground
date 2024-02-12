@@ -17,6 +17,7 @@ class SortingAlgorithmListTest {
             return when (algorithmType) {
                 ESortingAlgorithmType.INSERTION_SORT -> return InsertionSort()
                 ESortingAlgorithmType.SELECTION_SORT -> return SelectionSort()
+                ESortingAlgorithmType.MERGE_SORT -> return MergeSort()
                 else -> throw IllegalArgumentException("Type not defined")
             }
         }
@@ -62,6 +63,20 @@ class SortingAlgorithmListTest {
     @Test
     fun From1ToKInsertionSort() {
         val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.INSERTION_SORT)
+        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
+        assertEquals(SORTED_FROM_1_TO_K, sortedList)
+    }
+
+    @Test
+    fun From1To10MergeSort() {
+        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.MERGE_SORT)
+        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_10)
+        assertEquals(SORTED_FROM_1_TO_10, sortedList)
+    }
+
+    @Test
+    fun From1ToKMergeSort() {
+        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.MERGE_SORT)
         val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
         assertEquals(SORTED_FROM_1_TO_K, sortedList)
     }
