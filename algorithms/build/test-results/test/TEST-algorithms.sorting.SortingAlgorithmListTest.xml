@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="algorithms.sorting.SortingAlgorithmListTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-02-12T10:29:50" hostname="kkpa-ThinkPad-E590" time="102.705">
+<testsuite name="algorithms.sorting.SortingAlgorithmListTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-02-13T10:28:47" hostname="kkpa-ThinkPad-E590" time="105.204">
   <properties/>
-  <testcase name="From1To10MergeSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.022"/>
-  <testcase name="From1ToKMergeSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.207"/>
-  <testcase name="From1To10InsertionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.003"/>
-  <testcase name="From1ToKInsertionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="77.178"/>
-  <testcase name="From1To10SelectionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.002"/>
-  <testcase name="From1ToKSelectionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="25.283"/>
+  <testcase name="From1To10QuickSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.021"/>
+  <testcase name="From1ToKQuickSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.309"/>
+  <testcase name="From1To10MergeSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.002"/>
+  <testcase name="From1ToKMergeSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.283"/>
+  <testcase name="From1To10InsertionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.002"/>
+  <testcase name="From1ToKInsertionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="80.536"/>
+  <testcase name="From1To10SelectionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="0.001"/>
+  <testcase name="From1ToKSelectionSort()" classname="algorithms.sorting.SortingAlgorithmListTest" time="24.035"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
