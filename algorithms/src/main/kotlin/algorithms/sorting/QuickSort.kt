@@ -16,9 +16,10 @@ class QuickSort : Sortable<List<Int>> {
         }
         val pivot = inputData[size - 1]
         val less = inputData.filter { it < pivot }
+        val equal = inputData.filter { it == pivot }
         val greater = inputData.filter { it > pivot }
 
-        return sort(less) + listOf(pivot) + sort(greater)
+        return sort(less) + equal + sort(greater)
     }
 
 
