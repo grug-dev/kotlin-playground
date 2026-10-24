@@ -13,8 +13,8 @@ class MergeSort : Sortable<List<Int>> {
         }
 
         val half = size / 2
-        var leftPartition: List<Int> = sort(inputData.subList(0, half))
-        var rightPartition: List<Int> = sort(inputData.subList(half, size))
+        val leftPartition = sort(inputData.subList(0, half))
+        val rightPartition = sort(inputData.subList(half, size))
         return merge(leftPartition, rightPartition)
     }
 

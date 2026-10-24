@@ -1,4 +1,6 @@
-import java.util.*
+package leetcode
+
+import java.util.PriorityQueue
 
 /**
  * Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
@@ -6,8 +8,8 @@ import java.util.*
  * Return the sorted string. If there are multiple answers, return any of them.
  */
 data class CharacterFrequency(val character: String, val frequency: Long) : Comparable<CharacterFrequency> {
-    override fun compareTo(o1: CharacterFrequency): Int {
-        return o1.frequency.compareTo(this.frequency)
+    override fun compareTo(other: CharacterFrequency): Int {
+        return other.frequency.compareTo(this.frequency)
     }
 }
 
@@ -25,9 +27,7 @@ class SortCharactersByFrequency {
     }
 
     private fun createCharFrequencyMap(word: String): Map<Char, Long> {
-        var map = mutableMapOf<Char, Long>()
-        if (word.isEmpty()) return map
-
+        val map = mutableMapOf<Char, Long>()
         for (char in word) {
             map[char] = map[char]?.plus(1) ?: 1
         }
@@ -44,7 +44,7 @@ class SortCharactersByFrequency {
     }
 
     private fun concatCharactersFromQueue(queue: PriorityQueue<CharacterFrequency>): String {
-        var resultBuilder = StringBuilder()
+        val resultBuilder = StringBuilder()
         while (queue.isNotEmpty()) {
             resultBuilder.append(queue.poll().character)
         }

@@ -1,8 +1,8 @@
+package leetcode
+
 import org.junit.jupiter.api.Assertions.assertArrayEquals
-import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
-import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.MethodSource
 import java.util.stream.Stream
 
@@ -21,7 +21,10 @@ class TwoSumTest {
                 TwoSumTestData(intArrayOf(-3,4,3,90), 0, intArrayOf(0,2)),
                 TwoSumTestData(intArrayOf(-1,-2,-3,-4,-5), -8, intArrayOf(2,4)),
                 TwoSumTestData(intArrayOf(3, 100,1000, 2, 4), 6, intArrayOf(3, 4)),
-                TwoSumTestData(intArrayOf(3, 3), 6, intArrayOf(0, 1))
+                TwoSumTestData(intArrayOf(3, 3), 6, intArrayOf(0, 1)),
+                TwoSumTestData(intArrayOf(1, 2, 3), 100, intArrayOf()),
+                TwoSumTestData(intArrayOf(5), 5, intArrayOf()),
+                TwoSumTestData(intArrayOf(), 0, intArrayOf())
             ).map { Arguments.of(it) }
         }
     }
