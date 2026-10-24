@@ -1,99 +1,47 @@
 package algorithms.sorting
 
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import java.util.stream.Stream
+import kotlin.random.Random
 import kotlin.test.assertEquals
 
+/**
+ * Every Sortable must give the same result as the standard library sort:
+ * same elements, ascending order, duplicates kept.
+ * A new algorithm only needs a new ESortingAlgorithmType value.
+ */
 class SortingAlgorithmListTest {
+
     companion object {
+        // O(n^2) sorts are part of the set, so keep the big input small enough to stay fast.
+        private const val BIG_SIZE = 5_000
 
-        val RANDOM_FROM_1_TO_10 = randomList(10)
-        val SORTED_FROM_1_TO_10 = generateList(10)
+        private val inputs: Map<String, List<Int>> = mapOf(
+            "an empty list" to emptyList(),
+            "one item" to listOf(7),
+            "random values" to listOf(1, 8, 6, 2, 4),
+            "duplicates" to listOf(3, 1, 3, 2, 1, 3),
+            "all equal values" to listOf(5, 5, 5, 5),
+            "negative numbers" to listOf(0, -5, 3, -1, -5),
+            "a sorted list" to (1..20).toList(),
+            "a reversed list" to (20 downTo 1).toList(),
+            "$BIG_SIZE random values" to Random(42).let { r -> List(BIG_SIZE) { r.nextInt(-1_000, 1_000) } },
+        )
 
-        val _100K = 100000
-        val RANDOM_FROM_1_TO_K = randomList(_100K)
-        val SORTED_FROM_1_TO_K = generateList(_100K)
-
-        fun getAlgorithmSort(algorithmType: ESortingAlgorithmType): Sortable<List<Int>> {
-            return when (algorithmType) {
-                ESortingAlgorithmType.INSERTION_SORT -> return InsertionSort()
-                ESortingAlgorithmType.SELECTION_SORT -> return SelectionSort()
-                ESortingAlgorithmType.MERGE_SORT -> return MergeSort()
-                ESortingAlgorithmType.QUICK_SORT -> return QuickSort()
-                else -> throw IllegalArgumentException("Type not defined")
-            }
-        }
-
-        fun randomList(n: Int): List<Int> {
-            val randomNumbers = mutableListOf<Int>()
-            val possibleNumbers = (1..n).toMutableList()
-
-            while (randomNumbers.size < n) {
-                val randomIndex = (0 until possibleNumbers.size).random()
-                val randomNumber = possibleNumbers.removeAt(randomIndex)
-                randomNumbers.add(randomNumber)
-            }
-            return randomNumbers.toList() // Ensure immutability
-        }
-
-        fun generateList(n: Int): List<Int> {
-            return (1..n).toList()
-        }
+        @JvmStatic
+        fun cases(): Stream<Arguments> =
+            ESortingAlgorithmType.entries.flatMap { type ->
+                inputs.map { (name, input) -> Arguments.of(type, name, input) }
+            }.stream()
     }
 
-    @Test
-    fun From1To10SelectionSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.SELECTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_10)
-        assertEquals(SORTED_FROM_1_TO_10, sortedList)
-    }
+    @ParameterizedTest(name = "{0} sorts {1}")
+    @MethodSource("cases")
+    fun `sorts like the standard library`(type: ESortingAlgorithmType, name: String, input: List<Int>) {
+        val sorted = type.create().sort(input)
 
-    @Test
-    fun From1To10InsertionSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.INSERTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_10)
-        assertEquals(SORTED_FROM_1_TO_10, sortedList)
+        assertEquals(input.sorted(), sorted, "$type failed on $name")
     }
-
-    @Test
-    fun From1ToKSelectionSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.SELECTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
-        assertEquals(SORTED_FROM_1_TO_K, sortedList)
-    }
-
-    @Test
-    fun From1ToKInsertionSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.INSERTION_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
-        assertEquals(SORTED_FROM_1_TO_K, sortedList)
-    }
-
-    @Test
-    fun From1To10MergeSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.MERGE_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_10)
-        assertEquals(SORTED_FROM_1_TO_10, sortedList)
-    }
-
-    @Test
-    fun From1ToKMergeSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.MERGE_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
-        assertEquals(SORTED_FROM_1_TO_K, sortedList)
-    }
-
-    @Test
-    fun From1To10QuickSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.QUICK_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_10)
-        assertEquals(SORTED_FROM_1_TO_10, sortedList)
-    }
-
-    @Test
-    fun From1ToKQuickSort() {
-        val sortingAlgorithm = getAlgorithmSort(ESortingAlgorithmType.QUICK_SORT)
-        val sortedList = sortingAlgorithm.sort(RANDOM_FROM_1_TO_K)
-        assertEquals(SORTED_FROM_1_TO_K, sortedList)
-    }
-
 }
